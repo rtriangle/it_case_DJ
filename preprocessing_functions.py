@@ -51,6 +51,7 @@ def cut_by_percentile(data, percentile=95, columns=[]):
 
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
+from sklearn.feature_selection import f_classif
 def select_top_k_features(X, y, k=10):
     columns = ['FEATURE' + str(i) for i in range(k)]
     return pd.DataFrame(SelectKBest(f_classif, k=k).fit_transform(X, y), columns=columns)
